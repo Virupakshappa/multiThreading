@@ -7,8 +7,8 @@ public class Main {
         Semaphore b = new Semaphore(0); // second thread has to wait
 
 
-        HosaThread ht = new HosaThread(a,b);
-        HaleThread hlt = new HaleThread(b,a);
+        Runnable ht = new HosaThread(a,b);
+        Runnable hlt = new HaleThread(b,a);
 
         Thread t1 = new Thread(ht);
         Thread t2 = new Thread(hlt);
