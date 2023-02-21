@@ -9,15 +9,19 @@ public class Main {
 
         HosaThread ht = new HosaThread(a,b);
         HaleThread hlt = new HaleThread(b,a);
-        ht.start();
-        hlt.start();
+
+        Thread t1 = new Thread(ht);
+        Thread t2 = new Thread(hlt);
+
+        t1.start();
+        t2.start();
         try {
-            ht.join();
+            t1.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         try {
-            hlt.join();
+            t2.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

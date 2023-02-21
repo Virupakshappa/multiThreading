@@ -1,6 +1,6 @@
 import java.util.concurrent.Semaphore;
 
-public class HaleThread extends Thread{
+public class HaleThread implements Runnable{
 
     int[] hale = {1,2,3};
     Semaphore ins, outs;
